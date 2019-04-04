@@ -7,7 +7,7 @@ namespace santa_claus_problem
 {
     class Reindeer
     {
-        private static Random random = new Random(10);
+        private static Random random = new Random();
         public int Index { get; private set; }
         internal Sleigh Sleigh { get; set; }
 
@@ -24,7 +24,7 @@ namespace santa_claus_problem
             {
                 GoToVacation();
                 MeetSanta();
-            });
+            }).Start();
         }
 
         private void MeetSanta()
@@ -36,7 +36,7 @@ namespace santa_claus_problem
         private void GoToVacation()
         {
             NorthPole.Events.OnReindeerGoToVacation(Index);
-            Thread.Sleep(NorthPole.MINIMAL_TIME_TO_WAIT * random.Next());
+            Thread.Sleep(NorthPole.MINIMAL_TIME_TO_WAIT * random.Next(0, 11));
         }
     }
 }

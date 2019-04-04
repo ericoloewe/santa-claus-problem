@@ -7,7 +7,7 @@ namespace santa_claus_problem
     class SantaClaus
     {
         public bool IsSleeping { get; private set; } = true;
-        private static Random random = new Random(10);
+        private static Random random = new Random();
 
         private void Sleep()
         {
@@ -37,7 +37,7 @@ namespace santa_claus_problem
         private void DiscussToyProjects(IList<Elve> group)
         {
             NorthPole.Events.OnSantaDiscussToyProjects();
-            Thread.Sleep(NorthPole.MINIMAL_TIME_TO_WAIT * random.Next());
+            Thread.Sleep(NorthPole.MINIMAL_TIME_TO_WAIT * random.Next(0, 11));
 
             foreach (var elve in group)
             {
@@ -48,7 +48,7 @@ namespace santa_claus_problem
         private void GiveToys()
         {
             NorthPole.Events.OnSantaGiveToys();
-            Thread.Sleep(NorthPole.MINIMAL_TIME_TO_WAIT * random.Next());
+            Thread.Sleep(NorthPole.MINIMAL_TIME_TO_WAIT * random.Next(0, 11));
         }
 
         private void TieReindeerGroup(IList<Reindeer> group)

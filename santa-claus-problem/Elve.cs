@@ -6,7 +6,7 @@ namespace santa_claus_problem
 {
     class Elve
     {
-        private static Random random = new Random(10);
+        private static Random random = new Random();
         private int Index;
 
         public Elve(int index)
@@ -27,13 +27,13 @@ namespace santa_claus_problem
             {
                 BuildToys();
                 MeetSanta();
-            });
+            }).Start();
         }
 
         private void BuildToys()
         {
             NorthPole.Events.OnElveBuildToys(Index);
-            Thread.Sleep(NorthPole.MINIMAL_TIME_TO_WAIT * random.Next());
+            Thread.Sleep(NorthPole.MINIMAL_TIME_TO_WAIT * random.Next(0, 11));
         }
 
         private void MeetSanta()

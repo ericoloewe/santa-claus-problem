@@ -24,6 +24,12 @@ namespace santa_claus_problem
             CreateReindersAndMeetSanta();
             CreateElvesAndMeetSanta();
             CreateSantaAndYourHouse();
+
+            while (true)
+            {
+                System.Threading.Thread.Sleep(5000);
+                Console.WriteLine("Life signal");
+            }
         }
 
         private static void CreateSantaAndYourHouse()
