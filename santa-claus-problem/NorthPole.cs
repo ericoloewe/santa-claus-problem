@@ -15,10 +15,15 @@ namespace santa_claus_problem
 
         public static void GiveLiveToTheWorld(NorthPoleEvents events = null)
         {
+            if (events == null)
+            {
+                events = new NorthPoleEvents();
+            }
+
+            Events = events;
             CreateReindersAndMeetSanta();
             CreateElvesAndMeetSanta();
             CreateSantaAndYourHouse();
-            Events = events;
         }
 
         private static void CreateSantaAndYourHouse()
