@@ -1,4 +1,5 @@
 ﻿using System;
+using santa_claus_problem;
 
 namespace console
 {
@@ -6,7 +7,11 @@ namespace console
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            NorthPole.GiveLiveToTheWorld(new NorthPoleEvents()
+            {
+                OnSantaClausSleep = () => Console.WriteLine("santa sleep"),
+                OnSantaClausAwake = () => Console.WriteLine("santa awake")
+            });
         }
     }
 }
