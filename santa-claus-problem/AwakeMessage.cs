@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace santa_claus_problem
 {
@@ -20,6 +21,11 @@ namespace santa_claus_problem
 
             this.Group = Group;
         }
+
+        public override string ToString()
+        {
+            return $"[{string.Join(",", Group.Select(e => e.Index).ToArray())}]";
+        }
     }
 
     public class ElveAwakeMessage : AwakeMessage
@@ -34,6 +40,11 @@ namespace santa_claus_problem
             }
 
             this.Group = Group;
+        }
+
+        public override string ToString()
+        {
+            return $"[{string.Join(",", Group.Select(e => e.Index).ToArray())}]";
         }
     }
 }

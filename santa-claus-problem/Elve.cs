@@ -7,7 +7,7 @@ namespace santa_claus_problem
     class Elve
     {
         private static Random random = new Random();
-        private int Index;
+        public int Index { get; private set; }
 
         public Elve(int index)
         {
