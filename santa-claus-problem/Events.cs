@@ -5,19 +5,19 @@ namespace santa_claus_problem
 {
     public class NorthPoleEvents
     {
-        public Action OnSantaClausAwake { get; set; } = () => { };
-        public Action OnSantaClausSleep { get; set; } = () => { };
-        public Action OnSantaDiscussToyProjects { get; set; } = () => { };
-        public Action OnSantaGiveToys { get; set; } = () => { };
-        public Action OnSantaTieReindeerGroup { get; set; } = () => { };
-        public Action OnSantaUntieReindeerGroup { get; set; } = () => { };
-        public Action<ElveAwakeMessage> OnElvesAwakeSanta { get; set; } = i => { };
-        public Action<int> OnCreateElve { get; set; } = i => { };
-        public Action<int> OnCreateReindeer { get; set; } = i => { };
-        public Action<int> OnElveBuildToys { get; set; } = i => { };
-        public Action<int> OnElveMeetSanta { get; set; } = i => { };
-        public Action<int> OnReindeerGoToVacation { get; set; } = i => { };
-        public Action<int> OnReindeerMeetSanta { get; set; } = i => { };
-        public Action<ReindeerAwakeMessage> OnReindeersAwakeSanta { get; set; } = i => { };
+        public Action OnSantaClausAwake { internal get; set; } = () => { };
+        public Action OnSantaClausSleep { internal get; set; } = () => { };
+        public Action OnSantaDiscussToyProjects { internal get; set; } = () => { };
+        public Action OnSantaGiveToys { internal get; set; } = () => { };
+        public Action OnSantaTieReindeerGroup { internal get; set; } = () => { };
+        public Action OnSantaUntieReindeerGroup { internal get; set; } = () => { };
+        public Action<ElveAwakeMessage> OnElvesAwakeSanta { internal get; set; } = i => { };
+        public Action<int> OnCreateElve { internal get; set; } = i => { };
+        public Action<int> OnCreateReindeer { internal get; set; } = i => { };
+        public Action<int> OnElveBuildToys { internal get; set; } = i => { };
+        public Action<int> OnElveMeetSanta { internal get; set; } = i => { };
+        public Action<int> OnReindeerGoToVacation { internal get; set; } = i => { };
+        public Action<int> OnReindeerMeetSanta { internal get; set; } = i => { };
+        public Action<ReindeerAwakeMessage> OnReindeersAwakeSanta { internal get; set; } = i => { };
     }
 }
