@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -40,10 +39,10 @@ namespace santa_claus_problem
 
         internal void Meet(Elve elve)
         {
-            ElveGroup.Add(elve);
-
             lock (ElveGroup)
             {
+                ElveGroup.Add(elve);
+
                 if (ElveGroup.Count == 3)
                 {
                     var awakeMessage = new ElveAwakeMessage(ElveGroup.ToList());
