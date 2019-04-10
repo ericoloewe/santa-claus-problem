@@ -18,23 +18,18 @@ namespace santa_claus_problem
             NorthPole.Events.OnCreateReindeer(Index);
         }
 
-        private void StartLifeCycle()
+        internal void GoToVacationAndMeetSanta()
         {
             new Task(() =>
             {
-                GoToVacationAndMeetSanta();
+                GoToVacation();
+                MeetSanta();
             }).Start();
         }
 
         internal void OnUntie()
         {
             GoToVacationAndMeetSanta();
-        }
-
-        public void GoToVacationAndMeetSanta()
-        {
-            GoToVacation();
-            MeetSanta();
         }
 
         private void MeetSanta()

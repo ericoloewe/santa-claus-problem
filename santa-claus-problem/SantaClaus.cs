@@ -41,7 +41,7 @@ namespace santa_claus_problem
 
             foreach (var elve in group)
             {
-                elve.RestartLifeCycle();
+                elve.OnFinishToDiscussToyProject();
             }
         }
 
@@ -54,6 +54,7 @@ namespace santa_claus_problem
         private void TieReindeerGroup(IList<Reindeer> group)
         {
             NorthPole.Events.OnSantaTieReindeerGroup();
+
             foreach (var reindeer in group)
             {
                 NorthPole.SantaClausHouse.Sleigh.Tie(reindeer);

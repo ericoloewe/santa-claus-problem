@@ -12,16 +12,16 @@ namespace santa_claus_problem
         public Elve(int index)
         {
             this.Index = index;
-            StartLifeCycle();
+            BuildToysAndMeetSanta();
             NorthPole.Events.OnCreateElve(Index);
         }
 
-        public void RestartLifeCycle()
+        internal void OnFinishToDiscussToyProject()
         {
-            StartLifeCycle();
+            BuildToysAndMeetSanta();
         }
 
-        private void StartLifeCycle()
+        private void BuildToysAndMeetSanta()
         {
             new Task(() =>
             {
