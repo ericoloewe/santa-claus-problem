@@ -12,12 +12,32 @@
             "problemMatcher": "$tsc"
         },
         {
+            "label": "build-web",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/web-app/web-app.csproj"
+            ],
+            "problemMatcher": "$tsc"
+        },
+        {
             "label": "publish",
             "command": "dotnet",
             "type": "process",
             "args": [
                 "publish",
                 "${workspaceFolder}/console/console.csproj"
+            ],
+            "problemMatcher": "$tsc"
+        },
+        {
+            "label": "publish-web",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/web-app/web-app.csproj"
             ],
             "problemMatcher": "$tsc"
         },
@@ -31,6 +51,17 @@
                 "${workspaceFolder}/console/console.csproj"
             ],
             "problemMatcher": "$tsc"
-        }
+        },
+        {
+            "label": "watch-web",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "${workspaceFolder}/web-app/web-app.csproj"
+            ],
+            "problemMatcher": "$tsc"
+        },
     ]
 }
