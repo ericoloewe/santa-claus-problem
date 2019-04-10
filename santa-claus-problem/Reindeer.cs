@@ -14,7 +14,7 @@ namespace santa_claus_problem
         public Reindeer(int index)
         {
             this.Index = index;
-            StartLifeCycle();
+            GoToVacationAndMeetSanta();
             NorthPole.Events.OnCreateReindeer(Index);
         }
 
