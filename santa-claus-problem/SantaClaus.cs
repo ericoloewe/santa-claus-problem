@@ -62,7 +62,7 @@ namespace santa_claus_problem
 
         private void UntieReindeerGroup(IList<Reindeer> group)
         {
-            NorthPole.Events.OnSantaTieReindeerGroup();
+            NorthPole.Events.OnSantaUntieReindeerGroup();
             NorthPole.SantaClausHouse.Sleigh.UntieAll();
         }
     }

@@ -18,6 +18,7 @@ namespace santa_claus_problem
             foreach (var reindeer in Reindeers)
             {
                 reindeer.Sleigh = null;
+                reindeer.OnUntie();
             }
 
             Reindeers = new List<Reindeer>();

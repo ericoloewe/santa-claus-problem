@@ -22,9 +22,19 @@ namespace santa_claus_problem
         {
             new Task(() =>
             {
-                GoToVacation();
-                MeetSanta();
+                GoToVacationAndMeetSanta();
             }).Start();
+        }
+
+        internal void OnUntie()
+        {
+            GoToVacationAndMeetSanta();
+        }
+
+        public void GoToVacationAndMeetSanta()
+        {
+            GoToVacation();
+            MeetSanta();
         }
 
         private void MeetSanta()

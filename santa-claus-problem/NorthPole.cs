@@ -21,9 +21,9 @@ namespace santa_claus_problem
             }
 
             Events = events;
+            CreateSantaAndYourHouse();
             CreateReindersAndMeetSanta();
             CreateElvesAndMeetSanta();
-            CreateSantaAndYourHouse();
 
             while (true)
             {

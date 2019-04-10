@@ -26,6 +26,7 @@ namespace santa_claus_problem
                 {
                     var awakeMessage = new ReindeerAwakeMessage(ReindeerGroup);
 
+                    ReindeerGroup = new List<Reindeer>();
                     NorthPole.Events.OnReindeersAwakeSanta(awakeMessage);
                     Santa.Awake(awakeMessage);
                 }
@@ -42,6 +43,7 @@ namespace santa_claus_problem
                 {
                     var awakeMessage = new ElveAwakeMessage(ElveGroup);
 
+                    ElveGroup = new List<Elve>();
                     NorthPole.Events.OnElvesAwakeSanta(awakeMessage);
                     Santa.Awake(awakeMessage);
                 }
