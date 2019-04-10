@@ -6,11 +6,17 @@ namespace santa_claus_problem
 {
     interface AwakeMessage
     {
+        void OnAwake();
     }
 
     public class ReindeerAwakeMessage : AwakeMessage
     {
         internal IList<Reindeer> Group { get; private set; }
+
+        public void OnAwake()
+        {
+            NorthPole.Events.OnReindeersAwakeSanta(this);
+        }
 
         internal ReindeerAwakeMessage(IList<Reindeer> Group)
         {
@@ -40,6 +46,11 @@ namespace santa_claus_problem
             }
 
             this.Group = Group;
+        }
+
+        public void OnAwake()
+        {
+            NorthPole.Events.OnElvesAwakeSanta(this);
         }
 
         public override string ToString()

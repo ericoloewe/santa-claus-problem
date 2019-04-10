@@ -31,7 +31,6 @@ namespace santa_claus_problem
                         ReindeerGroup.Remove(reindeerToRemove);
                     }
 
-                    NorthPole.Events.OnReindeersAwakeSanta(awakeMessage);
                     Santa.Awake(awakeMessage);
                 }
             }
@@ -52,7 +51,6 @@ namespace santa_claus_problem
                         ElveGroup.Remove(elveToRemove);
                     }
 
-                    NorthPole.Events.OnElvesAwakeSanta(awakeMessage);
                     Santa.Awake(awakeMessage);
                 }
             }

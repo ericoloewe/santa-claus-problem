@@ -11,27 +11,38 @@ namespace santa_claus_problem
 
         private void Sleep()
         {
+            IsSleeping = true;
             NorthPole.Events.OnSantaClausSleep();
         }
 
         internal void Awake(AwakeMessage awakeMessage)
         {
-            NorthPole.Events.OnSantaClausAwake();
-
-            if (awakeMessage is ReindeerAwakeMessage)
+            lock (this)
             {
-                var reindeerAwakeMessage = (ReindeerAwakeMessage)awakeMessage;
+                if (!IsSleeping)
+                {
+                    throw new InvalidOperationException("Santa is already awaked!");
+                }
 
-                TieReindeerGroup(reindeerAwakeMessage.Group);
-                GiveToys();
-                UntieReindeerGroup(reindeerAwakeMessage.Group);
-            }
-            else if (awakeMessage is ElveAwakeMessage)
-            {
-                DiscussToyProjects(((ElveAwakeMessage)awakeMessage).Group);
-            }
+                IsSleeping = false;
+                awakeMessage.OnAwake();
+                NorthPole.Events.OnSantaClausAwake();
 
-            Sleep();
+                if (awakeMessage is ReindeerAwakeMessage)
+                {
+                    var reindeerAwakeMessage = (ReindeerAwakeMessage)awakeMessage;
+
+                    TieReindeerGroup(reindeerAwakeMessage.Group);
+                    GiveToys();
+                    UntieReindeerGroup(reindeerAwakeMessage.Group);
+                }
+                else if (awakeMessage is ElveAwakeMessage)
+                {
+                    DiscussToyProjects(((ElveAwakeMessage)awakeMessage).Group);
+                }
+
+                Sleep();
+            }
         }
 
         private void DiscussToyProjects(IList<Elve> group)
