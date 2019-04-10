@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace santa_claus_problem
@@ -12,6 +13,11 @@ namespace santa_claus_problem
 
         internal ReindeerAwakeMessage(IList<Reindeer> Group)
         {
+            if (Group.Count < 9)
+            {
+                throw new ArgumentException("Santa just awake with at least 9 reinders!");
+            }
+
             this.Group = Group;
         }
     }
@@ -22,6 +28,11 @@ namespace santa_claus_problem
 
         internal ElveAwakeMessage(IList<Elve> Group)
         {
+            if (Group.Count < 3)
+            {
+                throw new ArgumentException("Santa just awake with at least 3 elves!");
+            }
+
             this.Group = Group;
         }
     }

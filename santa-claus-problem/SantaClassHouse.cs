@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace santa_claus_problem
 {
@@ -24,9 +25,13 @@ namespace santa_claus_problem
             {
                 if (ReindeerGroup.Count == 9)
                 {
-                    var awakeMessage = new ReindeerAwakeMessage(ReindeerGroup);
+                    var awakeMessage = new ReindeerAwakeMessage(ReindeerGroup.ToList());
 
-                    ReindeerGroup = new List<Reindeer>();
+                    foreach (var reindeerToRemove in awakeMessage.Group)
+                    {
+                        ReindeerGroup.Remove(reindeerToRemove);
+                    }
+
                     NorthPole.Events.OnReindeersAwakeSanta(awakeMessage);
                     Santa.Awake(awakeMessage);
                 }
@@ -41,9 +46,13 @@ namespace santa_claus_problem
             {
                 if (ElveGroup.Count == 3)
                 {
-                    var awakeMessage = new ElveAwakeMessage(ElveGroup);
+                    var awakeMessage = new ElveAwakeMessage(ElveGroup.ToList());
 
-                    ElveGroup = new List<Elve>();
+                    foreach (var elveToRemove in awakeMessage.Group)
+                    {
+                        ElveGroup.Remove(elveToRemove);
+                    }
+
                     NorthPole.Events.OnElvesAwakeSanta(awakeMessage);
                     Santa.Awake(awakeMessage);
                 }
