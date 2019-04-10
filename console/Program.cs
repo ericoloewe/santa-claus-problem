@@ -19,9 +19,9 @@ namespace console
                 OnCreateElve = i => Console.WriteLine($"OnCreateElve-{i}"),
                 OnCreateReindeer = i => Console.WriteLine($"OnCreateReindeer-{i}"),
                 OnElveBuildToys = i => Console.WriteLine($"OnElveBuildToys-{i}"),
-                OnElveMeetSanta = i => Console.WriteLine($"OnElveMeetSanta-{i}"),
+                OnElveMeetSantaHouse = i => Console.WriteLine($"OnElveMeetSantaHouse-{i}"),
                 OnReindeerGoToVacation = i => Console.WriteLine($"OnReindeerGoToVacation-{i}"),
-                OnReindeerMeetSanta = i => Console.WriteLine($"OnReindeerMeetSanta-{i}"),
+                OnReindeerMeetSantaHouse = i => Console.WriteLine($"OnReindeerMeetSantaHouse-{i}"),
                 OnReindeersAwakeSanta = i => Console.WriteLine($"OnReindeersAwakeSanta-{i}"),
             });
         }

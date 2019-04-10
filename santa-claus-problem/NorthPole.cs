@@ -5,7 +5,7 @@ namespace santa_claus_problem
 {
     public class NorthPole
     {
-        internal static int MINIMAL_TIME_TO_WAIT = 1000;
+        internal static int MINIMAL_TIME_TO_WAIT = 500;
         internal static SantaClausHouse SantaClausHouse { get; private set; }
         internal static NorthPoleEvents Events { get; private set; }
         private static SantaClaus Santa { get; set; }

@@ -34,7 +34,7 @@ namespace santa_claus_problem
 
         private void MeetSanta()
         {
-            NorthPole.Events.OnReindeerMeetSanta(Index);
+            NorthPole.Events.OnReindeerMeetSantaHouse(Index);
             NorthPole.SantaClausHouse.Meet(this);
         }
 

@@ -15,9 +15,9 @@ namespace santa_claus_problem
         public Action<int> OnCreateElve { internal get; set; } = i => { };
         public Action<int> OnCreateReindeer { internal get; set; } = i => { };
         public Action<int> OnElveBuildToys { internal get; set; } = i => { };
-        public Action<int> OnElveMeetSanta { internal get; set; } = i => { };
+        public Action<int> OnElveMeetSantaHouse { internal get; set; } = i => { };
         public Action<int> OnReindeerGoToVacation { internal get; set; } = i => { };
-        public Action<int> OnReindeerMeetSanta { internal get; set; } = i => { };
+        public Action<int> OnReindeerMeetSantaHouse { internal get; set; } = i => { };
         public Action<ReindeerAwakeMessage> OnReindeersAwakeSanta { internal get; set; } = i => { };
     }
 }
