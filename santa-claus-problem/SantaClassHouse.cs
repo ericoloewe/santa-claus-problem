@@ -18,10 +18,10 @@ namespace santa_claus_problem
 
         internal void Meet(Reindeer reindeer)
         {
-            ReindeerGroup.Add(reindeer);
-
             lock (ReindeerGroup)
             {
+                ReindeerGroup.Add(reindeer);
+
                 if (ReindeerGroup.Count == 9)
                 {
                     var awakeMessage = new ReindeerAwakeMessage(ReindeerGroup.ToList());
@@ -38,20 +38,25 @@ namespace santa_claus_problem
 
         internal void Meet(Elve elve)
         {
+
             lock (ElveGroup)
             {
                 ElveGroup.Add(elve);
 
-                if (ElveGroup.Count == 3)
+                lock (ReindeerGroup)
                 {
-                    var awakeMessage = new ElveAwakeMessage(ElveGroup.ToList());
 
-                    foreach (var elveToRemove in awakeMessage.Group)
+                    if (ElveGroup.Count >= 3 && ReindeerGroup.Count < 9)
                     {
-                        ElveGroup.Remove(elveToRemove);
-                    }
+                        var awakeMessage = new ElveAwakeMessage(ElveGroup.Take(3).ToList());
 
-                    Santa.Awake(awakeMessage);
+                        foreach (var elveToRemove in awakeMessage.Group)
+                        {
+                            ElveGroup.Remove(elveToRemove);
+                        }
+
+                        Santa.Awake(awakeMessage);
+                    }
                 }
             }
         }
