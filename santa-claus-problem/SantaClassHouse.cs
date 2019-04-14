@@ -38,14 +38,12 @@ namespace santa_claus_problem
 
         internal void Meet(Elve elve)
         {
-
             lock (ElveGroup)
             {
                 ElveGroup.Add(elve);
 
                 lock (ReindeerGroup)
                 {
-
                     if (ElveGroup.Count >= 3 && ReindeerGroup.Count < 9)
                     {
                         var awakeMessage = new ElveAwakeMessage(ElveGroup.Take(3).ToList());
